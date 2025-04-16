@@ -59,15 +59,15 @@ while(terminou == False):
     print(f'Etapa {numero_da_rodada}: Vez do {jogador_da_vez}')
     print('Escolha uma casa numerada nesse tabuleiro')
     casa_do_tabuleiro = int(input())
-    if casa_do_tabuleiro > [2][2]:
-        if (numero_da_rodada+1)%2 == 0:
-            jogador_da_vez = nome_jogador1
-            simbolo = 'x'
-        else:
-            jogador_da_vez = nome_jogador2
-            simbolo = 'O'
-        print('Jogue novamente. Movimento inválido')
-    else: pass
+
+    if casa_do_tabuleiro >= 9:
+        print('Jogue novamente')
+        print(f"{tabuleiro[0]}\n{tabuleiro[1]}\n{tabuleiro[2]}")
+        numero_da_rodada -= 1
+        continue
+    
+    if tabuleiro[linha_do_tabuleiro][coluna_do_tabuleiro] ==
+
     linha_do_tabuleiro = math.floor(casa_do_tabuleiro / 3)     
     coluna_do_tabuleiro = (casa_do_tabuleiro % 3)
     tabuleiro[linha_do_tabuleiro][coluna_do_tabuleiro] = simbolo
@@ -94,5 +94,3 @@ while(terminou == False):
         print(f'Fim de Jogo!{jogador_da_vez} Venceu!')
 
     print(f"{tabuleiro[0]}\n{tabuleiro[1]}\n{tabuleiro[2]}")
-
-
